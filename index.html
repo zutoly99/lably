@@ -86,10 +86,46 @@
         }
         .footer a { color: #4f46e5; text-decoration: none; }
         
+        .contact {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #fff;
+        }
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            border: 2px solid #f59e0b;
+        }
+        .contact-box h2 { font-size: 1.8rem; font-weight: 800; color: #92400e; margin-bottom: 0.5rem; }
+        .contact-box p { color: #a16207; margin-bottom: 2rem; }
+        .contact-options { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: #fff;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1f2937;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .contact-card.whatsapp { background: #dcfce7; }
+        .contact-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .contact-label { font-size: 0.8rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+        .contact-value { font-size: 1rem; font-weight: 700; margin-top: 0.25rem; color: #1f2937; }
+        
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.5rem; }
             .buttons { flex-direction: column; align-items: center; }
             .btn-secondary { margin-left: 0; }
+            .contact-options { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -160,6 +196,30 @@
             </a>
         </div>
         <p class="note" style="margin-top: 1.5rem; color: rgba(255,255,255,0.5);">Available on Android. iOS coming soon.</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2>Want to onboard your library?</h2>
+            <p>Get in touch with us and we'll set you up in minutes!</p>
+            <div class="contact-options">
+                <a href="tel:+917030147487" class="contact-card">
+                    <span class="contact-icon">📞</span>
+                    <span class="contact-label">Call Us</span>
+                    <span class="contact-value">+91 7030 147 487</span>
+                </a>
+                <a href="mailto:support@zutly.in" class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-label">Email Us</span>
+                    <span class="contact-value">support@zutly.in</span>
+                </a>
+                <a href="https://wa.me/917020577773?text=Hi, I want to onboard my library on Lably." class="contact-card whatsapp">
+                    <span class="contact-icon">💬</span>
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-value">Chat with us</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
