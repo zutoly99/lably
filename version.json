@@ -1,0 +1,7 @@
+{
+  "version": "1.0.1",
+  "versionCode": 3,
+  "apkUrl": "./apk-file/lably.apk",
+  "releaseNotes": "Bug fixes and performance improvements",
+  "forceUpdate": false
+}
