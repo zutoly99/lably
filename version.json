@@ -1,7 +1,7 @@
 {
-  "version": "1.0.3",
-  "versionCode": 5,
+  "version": "1.0.4",
+  "versionCode": 6,
   "apkUrl": "./apk-file/lably.apk",
-  "releaseNotes": "Fixed payment calculations, plan pricing from settings, partial payment support",
+  "releaseNotes": "Reset password, professional receipts, owner phone in bills & messages, smart payment pre-fill",
   "forceUpdate": false
 }
