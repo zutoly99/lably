@@ -1,7 +1,7 @@
 {
-  "version": "1.0.4",
-  "versionCode": 6,
+  "version": "1.0.5",
+  "versionCode": 7,
   "apkUrl": "./apk-file/lably.apk",
-  "releaseNotes": "Reset password, professional receipts, owner phone in bills & messages, smart payment pre-fill",
+  "releaseNotes": "Smart payment split, deposit management, city in settings & PDF, plan renewal with custom start date, improved member details",
   "forceUpdate": false
 }

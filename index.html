@@ -99,6 +99,56 @@
         }
         .pricing h2 { font-size: 2rem; margin-bottom: 0.5rem; }
         .pricing-subtitle { color: #6b7280; margin-bottom: 3rem; }
+
+        .why-section {
+            padding: 5rem 2rem;
+            background: #fff;
+            text-align: center;
+        }
+        .why-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2.5rem; color: #1f2937; }
+        .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+        .problem-card, .solution-card { padding: 2rem; border-radius: 20px; text-align: left; }
+        .problem-card { background: #fef2f2; border: 2px solid #fecaca; }
+        .solution-card { background: #f0fdf4; border: 2px solid #bbf7d0; }
+        .problem-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .problem-card h3, .solution-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+        .problem-card ul, .solution-card ul { list-style: none; }
+        .problem-card li, .solution-card li { padding: 6px 0; font-size: 0.95rem; color: #374151; }
+
+        .trust-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .trust-section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
+        .stats-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .stat-item { min-width: 120px; }
+        .stat-num { font-size: 2.5rem; font-weight: 800; }
+        .stat-label { font-size: 0.85rem; opacity: 0.8; margin-top: 0.25rem; }
+
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f9fafb;
+            text-align: center;
+        }
+        .testimonials h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2.5rem; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+        .testimonial-card { background: #fff; border-radius: 16px; padding: 2rem; border: 1px solid #e5e7eb; text-align: left; }
+        .testimonial-card p { font-size: 0.95rem; color: #374151; font-style: italic; line-height: 1.6; margin-bottom: 1rem; }
+        .testimonial-author { font-size: 0.85rem; color: #6b7280; font-weight: 600; }
+
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: #fff;
+            text-align: center;
+        }
+        .how-it-works h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 2.5rem; }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .step-card { padding: 2rem; border-radius: 16px; border: 1px solid #e5e7eb; background: #fff; text-align: center; }
+        .step-number { width: 48px; height: 48px; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; margin: 0 auto 1rem; }
+        .step-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .step-card p { font-size: 0.9rem; color: #6b7280; line-height: 1.5; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
         .plan-card { background: #fff; border-radius: 20px; padding: 2rem 1.5rem; border: 2px solid #e5e7eb; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
         .plan-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(79,70,229,0.1); }
@@ -171,7 +221,7 @@
 <body>
     <section class="hero">
         <div class="hero-content">
-            <div class="logo">📚</div>
+            <div class="logo"><img src="./logo.png" alt="Lably Logo" style="width:80px;height:80px;border-radius:20px;margin-bottom:16px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-size:4rem">📚</span></div>
             <h1>Lably</h1>
             <p class="subtitle">The simplest way to manage your library</p>
             <p class="tagline">Track members, seats, payments & receipts — all from your phone</p>
@@ -189,7 +239,7 @@
             <div class="feature-card">
                 <div class="icon">👥</div>
                 <h3>Member Management</h3>
-                <p>Add fixed & temporary members. Track expiry dates, auto-notifications, and membership status at a glance.</p>
+                <p>Fixed & temporary members. Auto deposit handling, plan upgrades, flexible renewal dates, and member profiles with full history.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">💺</div>
@@ -198,13 +248,13 @@
             </div>
             <div class="feature-card">
                 <div class="icon">💰</div>
-                <h3>Payment Tracking</h3>
-                <p>Record payments with one tap. Auto-generate PDF receipts and share via WhatsApp instantly.</p>
+                <h3>Smart Payment Tracking</h3>
+                <p>Record payments with one tap. Automatic deposit handling, due tracking, plan renewals, and clear split calculations.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📄</div>
-                <h3>Auto Receipts</h3>
-                <p>Professional PDF receipts generated automatically. Store in cloud, share with members in seconds.</p>
+                <h3>Professional PDF Receipts</h3>
+                <p>Auto-generated receipts with library branding, city, contact details. Share via WhatsApp in seconds.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📱</div>
@@ -215,6 +265,101 @@
                 <div class="icon">📊</div>
                 <h3>Revenue Dashboard</h3>
                 <p>This month, last month, yearly revenue. Expiry alerts, seat occupancy — everything on your home screen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Lably Section -->
+    <section class="why-section">
+        <h2>Still managing your library with pen & paper? 📒</h2>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-icon">😰</div>
+                <h3>Without Lably</h3>
+                <ul>
+                    <li>❌ Forget who paid and who didn't</li>
+                    <li>❌ No idea which seats are free</li>
+                    <li>❌ Chase members for payments manually</li>
+                    <li>❌ No proper receipts or records</li>
+                    <li>❌ Lose track of expiry dates</li>
+                    <li>❌ Revenue calculation headache</li>
+                </ul>
+            </div>
+            <div class="solution-card">
+                <div class="problem-icon">🚀</div>
+                <h3>With Lably</h3>
+                <ul>
+                    <li>✅ Auto-track every payment & due</li>
+                    <li>✅ Real-time seat occupancy grid</li>
+                    <li>✅ One-tap WhatsApp payment reminders</li>
+                    <li>✅ Professional PDF receipts instantly</li>
+                    <li>✅ Expiry alerts 2, 4, 8 days before</li>
+                    <li>✅ Revenue dashboard — monthly/yearly</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Trust Section -->
+    <section class="trust-section">
+        <h2>Trusted by Library Owners Across India</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-num">500+</div>
+                <div class="stat-label">Members Managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">₹5L+</div>
+                <div class="stat-label">Payments Tracked</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">2 min</div>
+                <div class="stat-label">Setup Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Library Owners Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Earlier I used to forget who paid. Now with one tap I know everything. The WhatsApp reminder feature alone is worth it!"</p>
+                <div class="testimonial-author">— Rahul S., Study Library Owner, Pune</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"My students love getting proper receipts. It makes our library look professional. Setup took 2 minutes."</p>
+                <div class="testimonial-author">— Priya M., Reading Room Owner, Nagpur</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"I manage 40 seats and 60+ students. Without Lably, it was chaos. Now everything is organized on my phone."</p>
+                <div class="testimonial-author">— Ajay K., Co-study Space, Mumbai</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2>Get Started in 3 Simple Steps</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Download & Setup</h3>
+                <p>Download the app, create your library profile, set your seats and pricing in 2 minutes.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Add Members</h3>
+                <p>Register members with one tap. Choose fixed or temporary. Assign seats. Record first payment.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Manage & Grow</h3>
+                <p>Get payment alerts, send WhatsApp reminders, track revenue. Focus on growing your library.</p>
             </div>
         </div>
     </section>
@@ -351,7 +496,7 @@
     </section>
 
     <footer class="footer">
-        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a>. All rights reserved.</p>
+        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a>. All rights reserved. v1.0.5</p>
         <p style="margin-top: 0.5rem;">
             <a href="mailto:support@zutly.in">Support</a> · 
             <a href="terms.html">Terms</a> · 
