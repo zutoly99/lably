@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lably - Smart Library Management App</title>
-    <meta name="description" content="Lably - The smartest way to manage your library. Track members, seats, payments & receipts — all from your phone. Try free for 1 month.">
+    <meta name="description" content="Lably - The smartest way to manage your library. Track members, seats, payments & receipts — all from your phone.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,37 +13,17 @@
         .hero {
             min-height: 100vh;
             background: linear-gradient(160deg, #4f46e5 0%, #7c3aed 50%, #6d28d9 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
             position: relative;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
-        }
-        .hero-content { max-width: 650px; position: relative; z-index: 1; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%); }
+        .hero-content { max-width: 620px; position: relative; z-index: 1; }
         .hero h1 { font-size: 3.8rem; font-weight: 900; color: #fff; margin-bottom: 0.75rem; letter-spacing: -1px; }
-        .hero .subtitle { font-size: 1.4rem; color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-weight: 500; }
-        .hero .tagline { font-size: 1.05rem; color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; line-height: 1.6; }
-        .hero .free-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; color: #fff; font-weight: 600; margin-bottom: 2rem; backdrop-filter: blur(4px); }
+        .hero .subtitle { font-size: 1.35rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; font-weight: 500; }
+        .hero .tagline { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; line-height: 1.6; }
+        .hero .free-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); padding: 10px 24px; border-radius: 30px; font-size: 0.95rem; color: #fff; font-weight: 700; margin-bottom: 2.5rem; }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1.1rem 2.5rem;
-            border-radius: 14px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1.1rem 2.5rem; border-radius: 14px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
         .btn-primary { background: #fff; color: #4f46e5; }
         .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
@@ -52,255 +32,226 @@
         .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem; color: #1f2937; }
         .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 3rem; font-size: 1.05rem; }
 
-        .features { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .features { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .feature-card { padding: 2rem; border-radius: 20px; border: 1px solid #f3f4f6; background: #fff; transition: transform 0.2s, box-shadow 0.2s; }
         .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
         .feature-card .icon { font-size: 2.2rem; margin-bottom: 1rem; }
-        .feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .feature-card p { color: #6b7280; font-size: 0.95rem; line-height: 1.7; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .feature-card p { color: #6b7280; font-size: 0.93rem; line-height: 1.7; }
 
-        .why-section { padding: 6rem 2rem; background: #fafbfc; text-align: center; }
+        .why-section { padding: 5rem 2rem; background: #fafbfc; text-align: center; }
         .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
         .problem-card, .solution-card { padding: 2.5rem; border-radius: 24px; text-align: left; }
         .problem-card { background: #fef2f2; border: 2px solid #fecaca; }
         .solution-card { background: #f0fdf4; border: 2px solid #bbf7d0; }
-        .problem-card h3, .solution-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .problem-card h3, .solution-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem; }
         .problem-card ul, .solution-card ul { list-style: none; }
-        .problem-card li, .solution-card li { padding: 8px 0; font-size: 0.95rem; color: #374151; }
+        .problem-card li, .solution-card li { padding: 7px 0; font-size: 0.95rem; color: #374151; }
 
-        .trust-section { padding: 4.5rem 2rem; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); text-align: center; color: #fff; }
-        .trust-section h2 { font-size: 1.8rem; margin-bottom: 2.5rem; font-weight: 700; }
-        .stats-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
-        .stat-item { min-width: 130px; }
-        .stat-num { font-size: 3rem; font-weight: 900; }
-        .stat-label { font-size: 0.9rem; opacity: 0.8; margin-top: 0.25rem; }
+        .trust-section { padding: 4rem 2rem; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); text-align: center; color: #fff; }
+        .trust-section h2 { font-size: 1.6rem; margin-bottom: 2rem; font-weight: 700; }
+        .stats-grid { display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
+        .stat-num { font-size: 2.8rem; font-weight: 900; }
+        .stat-label { font-size: 0.85rem; opacity: 0.8; margin-top: 0.25rem; }
 
-        .testimonials { padding: 6rem 2rem; background: #fff; text-align: center; }
+        .testimonials { padding: 5rem 2rem; background: #fff; text-align: center; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
         .testimonial-card { background: #f9fafb; border-radius: 20px; padding: 2rem; border: 1px solid #f3f4f6; text-align: left; }
-        .testimonial-card p { font-size: 0.95rem; color: #374151; font-style: italic; line-height: 1.7; margin-bottom: 1.25rem; }
+        .testimonial-card p { font-size: 0.93rem; color: #374151; font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
         .testimonial-author { font-size: 0.85rem; color: #6b7280; font-weight: 600; }
-        .stars { color: #f59e0b; margin-bottom: 0.75rem; font-size: 1rem; }
+        .stars { color: #f59e0b; margin-bottom: 0.75rem; }
 
-        .how-it-works { padding: 6rem 2rem; background: #fafbfc; text-align: center; }
-        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
-        .step-card { padding: 2.5rem 2rem; border-radius: 20px; border: 1px solid #e5e7eb; background: #fff; text-align: center; }
-        .step-number { width: 52px; height: 52px; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.3rem; margin: 0 auto 1.25rem; }
-        .step-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .step-card p { font-size: 0.9rem; color: #6b7280; line-height: 1.6; }
-
-        .pricing { padding: 6rem 2rem; background: #fff; text-align: center; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; max-width: 1050px; margin: 0 auto; }
-        .plan-card { background: #fff; border-radius: 24px; padding: 2.5rem 1.5rem; border: 2px solid #e5e7eb; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
-        .plan-card:hover { transform: translateY(-6px); box-shadow: 0 16px 50px rgba(79,70,229,0.12); }
+        .pricing { padding: 5rem 2rem; background: #fafbfc; text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+        .plan-card { background: #fff; border-radius: 24px; padding: 2rem 1.5rem; border: 2px solid #e5e7eb; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+        .plan-card:hover { transform: translateY(-5px); box-shadow: 0 14px 45px rgba(79,70,229,0.1); }
         .plan-card.popular { border-color: #4f46e5; background: linear-gradient(160deg, #eef2ff 0%, #e0e7ff 100%); }
-        .plan-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; padding: 6px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
-        .plan-duration { font-size: 1rem; color: #6b7280; font-weight: 600; margin-bottom: 0.5rem; }
-        .plan-price { font-size: 2.8rem; font-weight: 900; color: #1f2937; }
-        .plan-per { font-size: 0.85rem; color: #4f46e5; font-weight: 600; margin-bottom: 1.5rem; }
-        .plan-save { display: inline-block; background: #dcfce7; color: #16a34a; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; padding: 5px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+        .plan-duration { font-size: 0.95rem; color: #6b7280; font-weight: 600; margin-bottom: 0.5rem; }
+        .plan-price { font-size: 2.5rem; font-weight: 900; color: #1f2937; }
+        .plan-per { font-size: 0.82rem; color: #4f46e5; font-weight: 600; margin-bottom: 1rem; }
+        .plan-save { display: inline-block; background: #dcfce7; color: #16a34a; padding: 4px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; margin-bottom: 1rem; }
         .plan-features { list-style: none; text-align: left; margin-bottom: 1.5rem; }
-        .plan-features li { padding: 7px 0; font-size: 0.9rem; color: #374151; }
-        .plan-btn { display: block; padding: 14px; border-radius: 12px; background: #f3f4f6; color: #374151; text-decoration: none; font-weight: 700; text-align: center; transition: all 0.2s; }
+        .plan-features li { padding: 6px 0; font-size: 0.88rem; color: #374151; }
+        .plan-btn { display: block; padding: 13px; border-radius: 12px; background: #f3f4f6; color: #374151; text-decoration: none; font-weight: 700; text-align: center; transition: all 0.2s; }
         .plan-btn:hover { background: #e5e7eb; }
         .popular-btn { background: linear-gradient(135deg, #4f46e5, #7c3aed) !important; color: #fff !important; }
-        .popular-btn:hover { opacity: 0.9; }
 
-        .referral { padding: 6rem 2rem; background: #fafbfc; text-align: center; }
-        .referral-box { max-width: 750px; margin: 0 auto; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 28px; padding: 3.5rem 2.5rem; border: 2px solid #16a34a; }
-        .referral-badge { display: inline-block; background: #16a34a; color: #fff; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.25rem; }
-        .referral-box h2 { font-size: 2rem; font-weight: 900; color: #14532d; margin-bottom: 0.75rem; }
-        .referral-box > p { color: #166534; margin-bottom: 2rem; font-size: 1.05rem; }
-        .referral-steps { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-        .referral-step { display: flex; align-items: center; gap: 0.75rem; background: #fff; padding: 1.25rem 1.5rem; border-radius: 16px; min-width: 200px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .step-num { width: 36px; height: 36px; background: #16a34a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem; flex-shrink: 0; }
-        .step-text strong { display: block; font-size: 0.9rem; color: #1f2937; }
-        .step-text span { font-size: 0.8rem; color: #6b7280; }
-        .referral-example { background: #fff; border-radius: 14px; padding: 1.25rem; border: 1px solid #bbf7d0; }
-        .referral-example p { margin: 0; font-size: 0.95rem; color: #166534; }
+        .referral { padding: 5rem 2rem; background: #fff; text-align: center; }
+        .referral-box { max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 28px; padding: 3rem 2rem; border: 2px solid #16a34a; }
+        .referral-badge { display: inline-block; background: #16a34a; color: #fff; padding: 7px 18px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; margin-bottom: 1rem; }
+        .referral-box h2 { font-size: 1.8rem; font-weight: 900; color: #14532d; margin-bottom: 0.5rem; }
+        .referral-box > p { color: #166534; margin-bottom: 2rem; font-size: 1rem; }
+        .referral-steps { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .referral-step { display: flex; align-items: center; gap: 0.75rem; background: #fff; padding: 1rem 1.25rem; border-radius: 14px; min-width: 190px; text-align: left; }
+        .step-num { width: 34px; height: 34px; background: #16a34a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+        .step-text strong { display: block; font-size: 0.88rem; color: #1f2937; }
+        .step-text span { font-size: 0.78rem; color: #6b7280; }
+        .referral-example { background: #fff; border-radius: 12px; padding: 1rem; border: 1px solid #bbf7d0; }
+        .referral-example p { margin: 0; font-size: 0.9rem; color: #166534; }
 
-        .download { padding: 5rem 2rem; text-align: center; background: linear-gradient(160deg, #4f46e5 0%, #7c3aed 50%, #6d28d9 100%); color: #fff; }
-        .download h2 { font-size: 2.2rem; margin-bottom: 1rem; font-weight: 800; }
-        .download p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(160deg, #4f46e5 0%, #7c3aed 50%, #6d28d9 100%); color: #fff; }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta-features { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+        .cta-feature { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 500; }
 
-        .contact { padding: 6rem 2rem; text-align: center; background: #fff; }
-        .contact-box { max-width: 750px; margin: 0 auto; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 28px; padding: 3.5rem 2.5rem; border: 2px solid #f59e0b; }
-        .contact-box h2 { font-size: 2rem; font-weight: 900; color: #92400e; margin-bottom: 0.75rem; }
-        .contact-box p { color: #a16207; margin-bottom: 2rem; font-size: 1.05rem; }
-        .contact-options { display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
-        .contact-card { display: flex; flex-direction: column; align-items: center; padding: 1.75rem 2rem; background: #fff; border-radius: 20px; text-decoration: none; color: #1f2937; min-width: 180px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
-        .contact-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .contact-card.whatsapp { background: #dcfce7; }
-        .contact-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
-        .contact-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
-        .contact-value { font-size: 1rem; font-weight: 700; margin-top: 0.25rem; color: #1f2937; }
+        .contact { padding: 5rem 2rem; text-align: center; background: #fff; }
+        .contact-box { max-width: 700px; margin: 0 auto; background: #f9fafb; border-radius: 28px; padding: 3rem 2rem; border: 1px solid #e5e7eb; }
+        .contact-box h2 { font-size: 1.8rem; font-weight: 900; color: #1f2937; margin-bottom: 0.5rem; }
+        .contact-box > p { color: #6b7280; margin-bottom: 1.5rem; font-size: 1rem; }
+        .visit-card { background: linear-gradient(135deg, #eef2ff, #e0e7ff); border-radius: 16px; padding: 1.25rem; margin-bottom: 2rem; border: 1px solid #c7d2fe; }
+        .visit-card p:first-child { margin: 0; font-size: 1rem; color: #4338ca; font-weight: 700; }
+        .visit-card p:last-child { margin: 0.5rem 0 0; font-size: 0.88rem; color: #6366f1; }
+        .contact-options { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .contact-card { display: flex; flex-direction: column; align-items: center; padding: 1.5rem 1.75rem; background: #fff; border-radius: 18px; text-decoration: none; color: #1f2937; min-width: 160px; border: 1px solid #e5e7eb; transition: transform 0.2s, box-shadow 0.2s; }
+        .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .contact-card.whatsapp { background: #f0fdf4; border-color: #bbf7d0; }
+        .contact-icon { font-size: 2rem; margin-bottom: 0.4rem; }
+        .contact-label { font-size: 0.72rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+        .contact-value { font-size: 0.95rem; font-weight: 700; margin-top: 0.2rem; }
 
-        .footer { padding: 2.5rem; text-align: center; color: #9ca3af; font-size: 0.85rem; background: #f9fafb; }
+        .footer { padding: 2rem; text-align: center; color: #9ca3af; font-size: 0.85rem; background: #f9fafb; }
         .footer a { color: #4f46e5; text-decoration: none; }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero .subtitle { font-size: 1.15rem; }
+            .hero h1 { font-size: 2.6rem; }
+            .hero .subtitle { font-size: 1.1rem; }
             .buttons { flex-direction: column; align-items: center; }
-            .btn-secondary { margin-left: 0; }
             .contact-options { flex-direction: column; align-items: center; }
             .stats-grid { gap: 2rem; }
-            .section-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.7rem; }
+            .cta-features { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="hero-content">
-            <div class="logo"><img src="./logo.png" alt="Lably Logo" style="width:90px;height:90px;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 30px rgba(0,0,0,0.2)" onerror="this.style.display='none'"></div>
+            <div class="logo"><img src="./logo.png" alt="Lably" style="width:88px;height:88px;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 30px rgba(0,0,0,0.2)" onerror="this.style.display='none'"></div>
             <h1>Lably</h1>
-            <p class="subtitle">Smart Library Management for Modern Owners</p>
-            <p class="tagline">Track members, seats, payments & receipts — all from your phone.<br>No more pen-paper headaches. Get organized in 2 minutes.</p>
-            <div class="free-badge">🎁 First Month FREE — No Credit Card Required</div>
+            <p class="subtitle">Your Library, Fully Organized</p>
+            <p class="tagline">Members, seats, payments, receipts — manage everything from your phone. No more registers, no more confusion.</p>
+            <div class="free-badge">🎁 Try FREE for 1 Month</div>
             <div class="buttons">
-                <a href="./apk-file/lably.apk" download="lably.apk" class="btn btn-primary">📱 Download Free</a>
-                <a href="#pricing" class="btn btn-secondary">View Pricing →</a>
+                <a href="./apk-file/lably.apk" download="lably.apk" class="btn btn-primary">📱 Download App</a>
+                <a href="#contact" class="btn btn-secondary">Talk to Us →</a>
             </div>
         </div>
     </section>
 
     <section class="features" id="features">
-        <h2 class="section-title">Everything You Need to Run Your Library</h2>
-        <p class="section-subtitle">One app. All features. Zero complexity.</p>
+        <h2 class="section-title">Everything Your Library Needs</h2>
+        <p class="section-subtitle">One app replaces your register, calculator & reminder notes</p>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="icon">👥</div>
-                <h3>Smart Member Management</h3>
-                <p>Fixed & temporary members. Auto deposit handling, plan upgrades, flexible renewal dates, and complete member profiles with payment history.</p>
+                <h3>Member Management</h3>
+                <p>Add fixed & temporary members. Deposit handling, plan upgrades, renewal tracking — all automatic.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">💺</div>
-                <h3>Visual Seat Management</h3>
-                <p>Configure total seats, assign to members, see real-time occupancy. Know exactly which seats are free at any moment.</p>
+                <h3>Seat Management</h3>
+                <p>See which seats are free instantly. Assign, change, release — real-time occupancy on your phone.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">💰</div>
-                <h3>Smart Payment Tracking</h3>
-                <p>Record payments with one tap. Automatic deposit split, due tracking, plan renewals with custom start dates, and clear calculations.</p>
+                <h3>Payment Tracking</h3>
+                <p>Record payments in one tap. Auto-splits deposit & plan. Shows due, paid, remaining — crystal clear.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📄</div>
-                <h3>Professional PDF Receipts</h3>
-                <p>Auto-generated branded receipts with your library name, city, contact details. Share via WhatsApp in seconds.</p>
+                <h3>PDF Receipts</h3>
+                <p>Professional receipts with your library name & logo. Generated instantly, shared via WhatsApp.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📱</div>
                 <h3>WhatsApp Reminders</h3>
-                <p>One-tap payment reminders with QR code. Expiry alerts at 2, 4, 8 days. Custom message templates. Members love it.</p>
+                <p>One-tap payment reminders with QR code. Members pay faster. You collect more on time.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">📊</div>
                 <h3>Revenue Dashboard</h3>
-                <p>Monthly, yearly revenue at a glance. Expiry alerts, seat occupancy, pending payments — your entire business on one screen.</p>
+                <p>This month's collection, pending dues, seat occupancy — your entire business at a glance.</p>
             </div>
         </div>
     </section>
 
     <section class="why-section">
-        <h2 class="section-title">Still Using Pen & Paper? 📒</h2>
-        <p class="section-subtitle">See what you're missing</p>
+        <h2 class="section-title">Why Library Owners Love Lably</h2>
         <div class="problems-grid">
             <div class="problem-card">
                 <h3>😰 Without Lably</h3>
                 <ul>
-                    <li>❌ Forget who paid and who didn't</li>
+                    <li>❌ Forget who paid, who didn't</li>
                     <li>❌ No idea which seats are free</li>
-                    <li>❌ Chase members for payments manually</li>
-                    <li>❌ No proper receipts or records</li>
-                    <li>❌ Lose track of expiry dates</li>
-                    <li>❌ Revenue calculation headache</li>
+                    <li>❌ Chase members for money</li>
+                    <li>❌ No receipts, no records</li>
+                    <li>❌ Miss expiry dates</li>
+                    <li>❌ Revenue? No clue</li>
                 </ul>
             </div>
             <div class="solution-card">
                 <h3>🚀 With Lably</h3>
                 <ul>
-                    <li>✅ Auto-track every payment & due amount</li>
-                    <li>✅ Real-time seat occupancy grid</li>
-                    <li>✅ One-tap WhatsApp payment reminders</li>
-                    <li>✅ Professional PDF receipts instantly</li>
-                    <li>✅ Expiry alerts 2, 4, 8 days before</li>
-                    <li>✅ Revenue dashboard — monthly & yearly</li>
+                    <li>✅ Every payment tracked automatically</li>
+                    <li>✅ Real-time seat grid</li>
+                    <li>✅ WhatsApp reminders in one tap</li>
+                    <li>✅ Professional receipts instantly</li>
+                    <li>✅ Alerts before expiry</li>
+                    <li>✅ Full revenue dashboard</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="trust-section">
-        <h2>Trusted by Library Owners Across India</h2>
+        <h2>Built for Indian Library Owners</h2>
         <div class="stats-grid">
-            <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Members Managed</div></div>
-            <div class="stat-item"><div class="stat-num">₹5L+</div><div class="stat-label">Payments Tracked</div></div>
+            <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Unlimited Members</div></div>
+            <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Unlimited Seats</div></div>
             <div class="stat-item"><div class="stat-num">99.9%</div><div class="stat-label">Uptime</div></div>
             <div class="stat-item"><div class="stat-num">2 min</div><div class="stat-label">Setup Time</div></div>
         </div>
     </section>
 
     <section class="testimonials">
-        <h2 class="section-title">Loved by Library Owners</h2>
-        <p class="section-subtitle">Don't take our word for it</p>
+        <h2 class="section-title">Why Choose Lably?</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"Earlier I used to forget who paid. Now with one tap I know everything. The WhatsApp reminder feature alone is worth it!"</p>
-                <div class="testimonial-author">— Rahul S., Study Library Owner, Pune</div>
+                <div class="stars">📱</div>
+                <p>Everything on your phone. No laptop needed. Manage your entire library while sitting at the counter.</p>
+                <div class="testimonial-author">Mobile-First Design</div>
             </div>
             <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"My students love getting proper receipts. It makes our library look professional. Setup took literally 2 minutes."</p>
-                <div class="testimonial-author">— Priya M., Reading Room Owner, Nagpur</div>
+                <div class="stars">⚡</div>
+                <p>Record payment, generate receipt, send on WhatsApp — all in under 10 seconds. That fast.</p>
+                <div class="testimonial-author">Built for Speed</div>
             </div>
             <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"I manage 40 seats and 60+ students. Without Lably, it was complete chaos. Now everything is organized on my phone."</p>
-                <div class="testimonial-author">— Ajay K., Co-study Space, Mumbai</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works">
-        <h2 class="section-title">Get Started in 3 Simple Steps</h2>
-        <p class="section-subtitle">Up and running in under 2 minutes</p>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Download & Setup</h3>
-                <p>Download the app, create your library profile, set your seats and pricing. Takes 2 minutes.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Add Members</h3>
-                <p>Register members with one tap. Choose fixed or temporary. Assign seats. Record first payment with deposit.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Manage & Grow</h3>
-                <p>Get payment alerts, send WhatsApp reminders, auto-generate receipts. Focus on growing your library.</p>
+                <div class="stars">🇮🇳</div>
+                <p>Made in India, for Indian libraries. UPI payments, WhatsApp integration, Hindi-friendly. Works offline too.</p>
+                <div class="testimonial-author">Made for You</div>
             </div>
         </div>
     </section>
 
     <section class="pricing" id="pricing">
-        <h2 class="section-title">Simple & Transparent Pricing</h2>
-        <p class="section-subtitle">First month FREE. All features included. Cancel anytime.</p>
+        <h2 class="section-title">Simple Pricing</h2>
+        <p class="section-subtitle">First month FREE. Cancel anytime. All features in every plan.</p>
         <div class="pricing-grid">
             <div class="plan-card">
                 <div class="plan-duration">1 Month</div>
                 <div class="plan-price">₹1,000</div>
                 <div class="plan-per">/month</div>
                 <ul class="plan-features">
-                    <li>✓ All features included</li>
-                    <li>✓ Unlimited members & seats</li>
+                    <li>✓ All features</li>
+                    <li>✓ Unlimited members</li>
                     <li>✓ WhatsApp reminders</li>
                     <li>✓ PDF receipts</li>
-                    <li>✓ Cancel anytime</li>
                 </ul>
-                <a href="#contact" class="plan-btn">Start Free Trial</a>
+                <a href="#contact" class="plan-btn">Get Started</a>
             </div>
             <div class="plan-card popular">
                 <div class="plan-badge">⭐ BEST VALUE</div>
@@ -309,13 +260,12 @@
                 <div class="plan-per">₹667/month</div>
                 <div class="plan-save">Save ₹1,000</div>
                 <ul class="plan-features">
-                    <li>✓ All features included</li>
-                    <li>✓ Unlimited members & seats</li>
+                    <li>✓ All features</li>
+                    <li>✓ Unlimited members</li>
                     <li>✓ WhatsApp reminders</li>
                     <li>✓ PDF receipts</li>
-                    <li>✓ Priority support</li>
                 </ul>
-                <a href="#contact" class="plan-btn popular-btn">Start Free Trial</a>
+                <a href="#contact" class="plan-btn popular-btn">Get Started</a>
             </div>
             <div class="plan-card">
                 <div class="plan-duration">6 Months</div>
@@ -323,13 +273,12 @@
                 <div class="plan-per">₹500/month</div>
                 <div class="plan-save">Save ₹3,000</div>
                 <ul class="plan-features">
-                    <li>✓ All features included</li>
-                    <li>✓ Unlimited members & seats</li>
+                    <li>✓ All features</li>
+                    <li>✓ Unlimited members</li>
                     <li>✓ WhatsApp reminders</li>
                     <li>✓ PDF receipts</li>
-                    <li>✓ Priority support</li>
                 </ul>
-                <a href="#contact" class="plan-btn">Start Free Trial</a>
+                <a href="#contact" class="plan-btn">Get Started</a>
             </div>
             <div class="plan-card">
                 <div class="plan-duration">1 Year</div>
@@ -337,87 +286,76 @@
                 <div class="plan-per">₹417/month</div>
                 <div class="plan-save">Save ₹7,000</div>
                 <ul class="plan-features">
-                    <li>✓ All features included</li>
-                    <li>✓ Unlimited members & seats</li>
+                    <li>✓ All features</li>
+                    <li>✓ Unlimited members</li>
                     <li>✓ WhatsApp reminders</li>
                     <li>✓ PDF receipts</li>
-                    <li>✓ Priority support</li>
                 </ul>
-                <a href="#contact" class="plan-btn">Start Free Trial</a>
+                <a href="#contact" class="plan-btn">Get Started</a>
             </div>
         </div>
-        <p style="margin-top: 2.5rem; color: #6b7280; font-size: 0.95rem;">🎁 <strong>First month absolutely FREE</strong> on all plans. No restrictions. No credit card needed.</p>
     </section>
 
     <section class="referral" id="referral">
         <div class="referral-box">
-            <div class="referral-badge">💰 REFER & EARN PROGRAM</div>
-            <h2>Earn 20% Lifetime Commission</h2>
-            <p>Refer a library to Lably and earn <strong>20% of their subscription fee every single month</strong> — for as long as they stay!</p>
+            <div class="referral-badge">💰 REFER & EARN</div>
+            <h2>Earn 20% Every Month</h2>
+            <p>Refer a library → They subscribe → You earn <strong>20% of their fee every month, forever.</strong></p>
             <div class="referral-steps">
-                <div class="referral-step">
-                    <div class="step-num">1</div>
-                    <div class="step-text"><strong>Refer a Library</strong><span>Share Lably with any library owner</span></div>
-                </div>
-                <div class="referral-step">
-                    <div class="step-num">2</div>
-                    <div class="step-text"><strong>They Subscribe</strong><span>When they sign up and pay</span></div>
-                </div>
-                <div class="referral-step">
-                    <div class="step-num">3</div>
-                    <div class="step-text"><strong>You Earn 20%</strong><span>Every renewal, forever. No cap.</span></div>
-                </div>
+                <div class="referral-step"><div class="step-num">1</div><div class="step-text"><strong>Share Lably</strong><span>Tell another library owner</span></div></div>
+                <div class="referral-step"><div class="step-num">2</div><div class="step-text"><strong>They Join</strong><span>They subscribe to Lably</span></div></div>
+                <div class="referral-step"><div class="step-num">3</div><div class="step-text"><strong>You Earn</strong><span>20% every month, no cap</span></div></div>
             </div>
             <div class="referral-example">
-                <p>💡 <strong>Example:</strong> Refer 5 libraries on ₹1,000/month plan → You earn <strong>₹1,000/month</strong> passive income forever!</p>
+                <p>💡 Refer 5 libraries on ₹1,000/month → You earn <strong>₹1,000/month</strong> passive income!</p>
             </div>
         </div>
     </section>
 
-    <section class="download" id="download">
-        <h2>Ready to Transform Your Library?</h2>
-        <p>Join hundreds of library owners who already simplified their business</p>
-        <div class="buttons">
-            <a href="./apk-file/lably.apk" download="lably.apk" class="btn btn-primary">📱 Download Free</a>
+    <section class="cta-section">
+        <h2>Start Managing Smarter Today</h2>
+        <p>Join hundreds of library owners who ditched the register</p>
+        <div class="cta-features">
+            <div class="cta-feature">✓ Free for 1 month</div>
+            <div class="cta-feature">✓ Cancel anytime</div>
+            <div class="cta-feature">✓ We help you set up</div>
         </div>
-        <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.5); font-size: 0.9rem;">Available on Android • iOS coming soon</p>
+        <div class="buttons">
+            <a href="./apk-file/lably.apk" download="lably.apk" class="btn btn-primary">📱 Download App</a>
+            <a href="#contact" class="btn btn-secondary">Talk to Us →</a>
+        </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="contact-box">
-            <h2>Ready to Get Started?</h2>
-            <p>Call us and our representative will visit your library for FREE setup & demo!</p>
-            <div style="background:#fff;border-radius:16px;padding:1.25rem;margin-bottom:2rem;border:1px solid #fbbf24;">
-                <p style="margin:0;font-size:1rem;color:#92400e;font-weight:600;">🏠 We Come to You — FREE Setup</p>
-                <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#a16207;">Our team will visit your library, set up everything on your phone, add your members, and train you — completely free. Just call us!</p>
+            <h2>Let's Set Up Your Library</h2>
+            <p>Call us — our team will come to your library and set up everything for free!</p>
+            <div class="visit-card">
+                <p>🏠 FREE On-Site Setup</p>
+                <p>We visit your library, install the app, add members, and train you. Zero effort from your side.</p>
             </div>
             <div class="contact-options">
                 <a href="tel:+917030147487" class="contact-card">
                     <span class="contact-icon">📞</span>
-                    <span class="contact-label">Call Us</span>
+                    <span class="contact-label">Call</span>
                     <span class="contact-value">+91 7030 147 487</span>
+                </a>
+                <a href="https://wa.me/917030147487?text=Hi, I want Lably for my library. Please send someone for setup." class="contact-card whatsapp">
+                    <span class="contact-icon">💬</span>
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-value">Message Us</span>
                 </a>
                 <a href="mailto:support@zutly.in" class="contact-card">
                     <span class="contact-icon">✉️</span>
-                    <span class="contact-label">Email Us</span>
+                    <span class="contact-label">Email</span>
                     <span class="contact-value">support@zutly.in</span>
-                </a>
-                <a href="https://wa.me/917030147487?text=Hi, I want to start using Lably for my library. Please send someone for setup." class="contact-card whatsapp">
-                    <span class="contact-icon">💬</span>
-                    <span class="contact-label">WhatsApp</span>
-                    <span class="contact-value">Chat with us</span>
                 </a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a>. All rights reserved. v1.0.5</p>
-        <p style="margin-top: 0.5rem;">
-            <a href="mailto:support@zutly.in">Support</a> · 
-            <a href="terms.html">Terms</a> · 
-            <a href="privacy.html">Privacy</a>
-        </p>
+        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></p>
     </footer>
 </body>
 </html>
