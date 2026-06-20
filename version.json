@@ -1,7 +1,7 @@
 {
-  "version": "1.0.5",
-  "versionCode": 7,
+  "version": "1.0.6",
+  "versionCode": 8,
   "apkUrl": "./apk-file/lably.apk",
-  "releaseNotes": "Smart payment split, deposit management, city in settings & PDF, plan renewal with custom start date, improved member details",
+  "releaseNotes": "New login UI, improved PDF receipts, plan renewal with custom dates, fixed adaptive icon & splash",
   "forceUpdate": false
 }
