@@ -30,7 +30,10 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
         .btn-primary { background: #fff; color: #4f46e5; }
         .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
-        .buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+        .buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; align-items: center; }
+        .buttons a img:hover { transform: scale(1.05); }
+        .buttons a { transition: transform 0.2s; }
+        .buttons a:hover { transform: translateY(-3px); }
 
         .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem; color: #1f2937; }
         .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 3rem; font-size: 1.05rem; }
@@ -137,13 +140,12 @@
             <p class="subtitle">Your Library, Fully Organized</p>
             <p class="tagline">Members, seats, payments, receipts — manage everything from your phone. No more registers, no more confusion.</p>
             <div class="free-badge">🎁 6 Months Completely FREE • Cancel Anytime</div>
-            <div class="buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.lably.librarymanagement">
-                    <img src="./get-it-on-platstore.avif" alt="Get it on Google Play" style="height:56px;" />
+            <div class="buttons" style="align-items:center;">
+                <a href="https://play.google.com/store/apps/details?id=com.lably.librarymanagement" style="display:inline-block;transition:transform 0.2s;">
+                    <img src="./get-it-on-platstore.avif" alt="Get it on Google Play" style="height:60px;border-radius:8px;" />
                 </a>
                 <a href="#contact" class="btn btn-secondary">Talk to Us →</a>
             </div>
-            <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.5);">✅ Available on Google Play Store</p>
         </div>
     </section>
 
@@ -320,19 +322,18 @@
 
     <section class="cta-section">
         <h2>Start Managing Smarter Today</h2>
-        <p>Join hundreds of library owners who ditched the register</p>
+        <p>Join library owners who ditched the register</p>
         <div class="cta-features">
             <div class="cta-feature">✓ 6 months FREE</div>
             <div class="cta-feature">✓ Cancel anytime</div>
             <div class="cta-feature">✓ Free installation & setup</div>
         </div>
-        <div class="buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.lably.librarymanagement">
-                <img src="./get-it-on-platstore.avif" alt="Get it on Google Play" style="height:56px;" />
+        <div class="buttons" style="align-items:center;">
+            <a href="https://play.google.com/store/apps/details?id=com.lably.librarymanagement" style="display:inline-block;transition:transform 0.2s;">
+                <img src="./get-it-on-platstore.avif" alt="Get it on Google Play" style="height:60px;border-radius:8px;" />
             </a>
             <a href="#contact" class="btn btn-secondary">Talk to Us →</a>
         </div>
-        <p style="margin-top:1.25rem;font-size:0.85rem;color:rgba(255,255,255,0.5);">✅ Now available on Google Play Store</p>
     </section>
 
     <!-- About Us -->
@@ -401,8 +402,7 @@
     </section>
 
     <footer class="footer">
-        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></p>
-        <p style="margin-top:0.4rem;font-size:0.78rem;">Plot No. 66, BU Bhandari Skyline, Datanagar Dighi, Pune - 411015</p>
+        <p>© 2025 Lably by <a href="https://zutly.in">Zutly</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="https://play.google.com/store/apps/details?id=com.lably.librarymanagement">Play Store</a></p>
     </footer>
 </body>
 </html>
