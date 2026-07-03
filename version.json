@@ -1,6 +1,0 @@
-{
-  "version": "1.0.6",
-  "versionCode": 8,
-  "releaseNotes": "New login UI, improved PDF receipts, plan renewal, Marathi support in PDFs",
-  "forceUpdate": false
-}
