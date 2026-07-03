@@ -1,7 +1,6 @@
 {
   "version": "1.0.6",
   "versionCode": 8,
-  "apkUrl": "./apk-file/lably.apk",
-  "releaseNotes": "New login UI, improved PDF receipts, plan renewal with custom dates, fixed adaptive icon & splash",
+  "releaseNotes": "New login UI, improved PDF receipts, plan renewal, Marathi support in PDFs",
   "forceUpdate": false
 }
