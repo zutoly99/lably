@@ -3,226 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lably - Rules & How It Works</title>
+    <title>Lably - How It Works & Rules</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lexend', sans-serif; color: #1f2937; background: #f9fafb; padding: 2rem; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #4f46e5; }
-        .subtitle { color: #6b7280; margin-bottom: 2rem; }
-        .section { background: #fff; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; border: 1px solid #e5e7eb; }
-        .section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+        body { font-family: 'Lexend', sans-serif; color: #1f2937; background: #f9fafb; padding: 2rem 1rem; }
+        .container { max-width: 700px; margin: 0 auto; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; color: #1f2937; }
+        .subtitle { color: #6b7280; margin-bottom: 2rem; font-size: 0.95rem; }
+        .section { border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; border: 1px solid; }
+        .section h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; }
         .section ul { list-style: none; }
-        .section li { padding: 6px 0; font-size: 0.92rem; color: #374151; line-height: 1.5; }
-        .section li::before { content: "•"; color: #9ca3af; margin-right: 8px; }
-        .quick-ref { background: #eef2ff; border: 1px solid #c7d2fe; }
-        .quick-ref h2 { color: #4338ca; }
-        .quick-ref li::before { content: ""; margin: 0; }
-        .footer { text-align: center; margin-top: 2rem; color: #9ca3af; font-size: 0.85rem; }
+        .section li { padding: 5px 0; font-size: 0.9rem; color: #374151; line-height: 1.6; }
+        .tip { background: #fff; border-radius: 10px; padding: 10px 14px; margin-top: 10px; font-size: 0.82rem; color: #6b7280; }
+        .example { background: #fff; border-radius: 10px; padding: 10px 14px; margin: 6px 0; font-size: 0.82rem; }
+        .example .result { color: #16a34a; font-weight: 600; margin-top: 4px; }
+        .blue { background: #eff6ff; border-color: #bfdbfe; }
+        .blue h2 { color: #1e40af; }
+        .purple { background: #faf5ff; border-color: #e9d5ff; }
+        .purple h2 { color: #6b21a8; }
+        .green { background: #f0fdf4; border-color: #bbf7d0; }
+        .green h2 { color: #166534; }
+        .amber { background: #fffbeb; border-color: #fde68a; }
+        .amber h2 { color: #92400e; }
+        .indigo { background: #eef2ff; border-color: #c7d2fe; }
+        .indigo h2 { color: #3730a3; }
+        .orange { background: #fff7ed; border-color: #fed7aa; }
+        .orange h2 { color: #9a3412; }
+        .gray { background: #f9fafb; border-color: #e5e7eb; }
+        .gray h2 { color: #374151; }
+        .allowed { background: #f0fdf4; border-color: #86efac; }
+        .allowed h2 { color: #166534; }
+        .blocked { background: #fef2f2; border-color: #fecaca; }
+        .blocked h2 { color: #991b1b; }
+        .footer { text-align: center; margin-top: 2rem; color: #9ca3af; font-size: 0.82rem; }
         .footer a { color: #4f46e5; text-decoration: none; }
-        .back-link { display: inline-block; margin-bottom: 1.5rem; color: #4f46e5; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: #4f46e5; text-decoration: none; font-weight: 600; font-size: 0.88rem; }
+        @media (max-width: 600px) { body { padding: 1rem 0.75rem; } h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← Back to Home</a>
-        <h1>📖 Rules & How It Works</h1>
-        <p class="subtitle">Everything you need to know about using Lably</p>
+        <h1>👋 How Lably Works</h1>
+        <p class="subtitle">Step-by-step guide — from setup to daily management. Super simple!</p>
 
-        <div class="section">
-            <h2>🧾 Member Profile — What Each Field Means</h2>
+        <div class="section blue">
+            <h2>⚙️ Step 1: Set Up Your Library</h2>
             <ul>
-                <li><strong>Paid:</strong> Total plan payments made (excludes deposit). Example: Plan ₹500, paid ₹300 so far → shows ₹300</li>
-                <li><strong>Remaining:</strong> How much is still due for current plan. Example: Plan ₹500, paid ₹300 → shows ₹200</li>
-                <li><strong>Seat:</strong> The seat number assigned. Shows 'Not assigned' for temporary members</li>
-                <li><strong>Deposit:</strong> One-time security deposit collected at registration. Not part of plan amount</li>
-                <li><strong>Join Date:</strong> When member was first registered. Never changes</li>
-                <li><strong>Plan Start:</strong> Start date of current billing cycle. Changes on every renewal</li>
-                <li><strong>Plan End:</strong> Expiry date of current plan. Changes on every renewal</li>
-                <li><strong>Days Left:</strong> Days until plan expires. Shows 'Expired X days ago' if overdue</li>
-                <li><strong>Plan:</strong> Subscription duration (1 or 3 months) and total plan price</li>
+                <li>📍 Library Name & City → appears on all bills</li>
+                <li>📞 Your Phone → so members can contact you</li>
+                <li>💰 Prices → fixed seat price, temporary price, 3-month price</li>
+                <li>🔒 Deposit → one-time fee for new members</li>
+                <li>📱 UPI ID & QR → so members can pay you online</li>
+                <li>💺 Total Seats → how many seats your library has</li>
+            </ul>
+            <div class="tip">💡 Think of it like filling a form about your library. Do this once!</div>
+        </div>
+
+        <div class="section purple">
+            <h2>👥 Step 2: Two Types of Members</h2>
+            <ul>
+                <li>🪑 Fixed = Gets their OWN seat. Nobody else can sit there.</li>
+                <li>⏱️ Temporary = No fixed seat. Comes and goes.</li>
+                <li>Fixed members can take 1-month or 3-month plan.</li>
+                <li>Temporary members always get 1-month plan only.</li>
+            </ul>
+            <div class="tip">💡 If all seats are full, you can only add Temporary members!</div>
+        </div>
+
+        <div class="section green">
+            <h2>➕ Step 3: Adding a New Member</h2>
+            <ul>
+                <li>Tap + button → Fill name, phone → Choose Fixed or Temporary</li>
+                <li>For Fixed: pick a seat from available ones</li>
+                <li>App shows: Plan Price + Deposit = Total to collect</li>
+                <li>Enter how much the member actually gave you</li>
+                <li>Gave full? Great! Gave less? No problem — app tracks the rest</li>
+                <li>A bill (receipt) is auto-created. Share it on WhatsApp!</li>
+            </ul>
+            <div class="tip">💡 The app does all the math. You just enter what you received!</div>
+        </div>
+
+        <div class="section amber">
+            <h2>🔒 Step 4: Deposit — One Time Only</h2>
+            <ul>
+                <li>Deposit = security money collected ONCE when someone joins</li>
+                <li>NOT charged again when they renew next month</li>
+                <li>If member gives ₹600 and deposit is ₹100 → ₹100 deposit + ₹500 plan</li>
+                <li>If member gives ₹400 and deposit is ₹100 → ₹100 deposit + ₹300 plan (₹200 remaining)</li>
+            </ul>
+            <div class="tip">💡 Don't want deposit? Set it to ₹0 in Settings.</div>
+        </div>
+
+        <div class="section indigo">
+            <h2>💺 Step 5: Seat Management</h2>
+            <ul>
+                <li>1 seat = 1 member. Nobody shares.</li>
+                <li>Fixed member MUST have a seat. Temporary CANNOT.</li>
+                <li>When someone leaves → seat becomes free automatically</li>
+                <li>You can change someone's seat anytime from their profile</li>
+            </ul>
+            <div class="tip">💡 Need more seats? Just increase the number in Settings!</div>
+        </div>
+
+        <div class="section green">
+            <h2>💳 Step 6: Collecting Monthly Payment</h2>
+            <ul>
+                <li>Open member profile → tap 'Record Payment'</li>
+                <li>App auto-fills the amount they need to pay</li>
+                <li>If they have old due → that gets cleared FIRST</li>
+                <li>Then remaining money goes to new month's plan</li>
+            </ul>
+            <div class="example">
+                <div>Due ₹200 from last month. Plan ₹500. Member gives ₹700</div>
+                <div class="result">→ ₹200 clears old due ✓ + ₹500 starts new plan ✓</div>
+            </div>
+            <div class="example">
+                <div>Due ₹200. Member gives only ₹400</div>
+                <div class="result">→ ₹200 clears due ✓ + ₹200 to plan (₹300 still remaining)</div>
+            </div>
+            <div class="tip">💡 After recording, a professional bill is auto-generated!</div>
+        </div>
+
+        <div class="section orange">
+            <h2>🔁 Step 7: Plan Renewal (When Plan Expires)</h2>
+            <ul>
+                <li>Renewal ONLY happens when plan is expired AND full amount is paid</li>
+                <li>If plan is active, payments just reduce due — no renewal</li>
+                <li>New plan starts from: old expiry + 1 day</li>
+                <li>Member going away? Set a custom start date!</li>
+                <li>Partial payment makes them active but dates don't extend</li>
+            </ul>
+            <div class="tip">💡 Renewal only happens when the FULL plan amount is paid!</div>
+        </div>
+
+        <div class="section green">
+            <h2>📱 Step 8: WhatsApp Reminders</h2>
+            <ul>
+                <li>Open member profile → tap 'WhatsApp Message'</li>
+                <li>Message auto-changes based on status:</li>
+                <li>&nbsp;&nbsp;😱 Expired → Urgent reminder with amount + UPI + QR + Pay link</li>
+                <li>&nbsp;&nbsp;⏰ Expiring soon → Warning with renewal amount + payment options</li>
+                <li>&nbsp;&nbsp;💳 Pending due → Payment reminder with due amount + Pay link</li>
+                <li>&nbsp;&nbsp;😊 Active & paid → General greeting</li>
+                <li>Every payment message has: UPI ID + QR Code + "Click to Pay" link</li>
+                <li>Member taps "Click to Pay" → UPI app opens with amount ready!</li>
+            </ul>
+            <div class="tip">💡 You don't type anything. Just tap the button and send!</div>
+        </div>
+
+        <div class="section purple">
+            <h2>📄 Step 9: Bills / Receipts</h2>
+            <ul>
+                <li>Every payment → PDF bill created automatically</li>
+                <li>Shows: library name, city, phone, plan details, amount paid</li>
+                <li>Registration receipt includes deposit. Renewal receipt does not.</li>
+                <li>Works in Marathi/Hindi — just type in your language</li>
+                <li>Share on WhatsApp right from the app</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>🧮 How 'Paid' and 'Remaining' are Calculated</h2>
+        <div class="section blue">
+            <h2>📊 Step 10: Your Revenue</h2>
             <ul>
-                <li>Paid = All plan payments ever made (deposit NOT included)</li>
-                <li>The system counts total plan payments across all cycles</li>
-                <li>Remaining = Plan price − (total paid in current cycle)</li>
-                <li>Current cycle paid = total paid % (modulo) plan price</li>
-                <li><strong>Example:</strong> Plan ₹500. Total paid ₹800. Current cycle: ₹800 % ₹500 = ₹300. Remaining: ₹200</li>
-                <li><strong>Example:</strong> Plan ₹500. Total paid ₹1000. Current cycle: ₹0 (fully paid). Remaining: ₹0</li>
-                <li>When remaining = ₹0 AND plan is expired → next payment triggers renewal</li>
-                <li>Deposit is shown separately and never counts toward 'Paid' amount</li>
+                <li>Dashboard shows total cash collected</li>
+                <li>This month, last month, yearly — everything</li>
+                <li>Revenue = all payments received (including deposits)</li>
+                <li>Check daily to see pending payments!</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>👥 Member Types</h2>
+        <div class="section gray">
+            <h2>🔄 Plan Switching (Advanced)</h2>
             <ul>
-                <li>Two member types: Fixed (dedicated seat) and Temporary (no fixed seat)</li>
-                <li>Fixed members must have a seat assigned at registration</li>
-                <li>Temporary members cannot have a seat</li>
-                <li>If no seats available, member must be registered as Temporary</li>
-                <li>Temporary members can only have a 1-month plan</li>
+                <li>Upgrade 1-month → 3-month: Always allowed ✅</li>
+                <li>Downgrade 3-month → 1-month: Only after plan expires ✅</li>
+                <li>Fixed → Temporary: Only for 1-month members ✅</li>
+                <li>Temporary → Fixed: Always allowed ✅</li>
+                <li>3-month → Temporary: Never allowed ❌</li>
+            </ul>
+            <div class="tip">💡 When plan is expired, you can switch to any plan!</div>
+        </div>
+
+        <div class="section gray">
+            <h2>🧾 Member Profile Fields</h2>
+            <ul>
+                <li><strong>Paid</strong> — Total plan payments ever made (deposit excluded)</li>
+                <li><strong>Remaining</strong> — Due for current plan cycle</li>
+                <li><strong>Seat</strong> — Assigned seat number</li>
+                <li><strong>Deposit</strong> — One-time deposit at registration</li>
+                <li><strong>Join Date</strong> — When first registered (never changes)</li>
+                <li><strong>Plan Start</strong> — Current cycle start (changes on renewal)</li>
+                <li><strong>Plan End</strong> — When plan expires (changes on renewal)</li>
+                <li><strong>Days Left</strong> — Days until expiry</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>💰 Plans & Pricing</h2>
+        <div class="section allowed">
+            <h2>✅ What's Allowed</h2>
             <ul>
-                <li>Fixed members can choose 1-month or 3-month plan</li>
-                <li>Temporary members always have 1-month plan only</li>
-                <li>Plan prices are set in Settings by the library owner</li>
-                <li>3-month plan price is the total for all 3 months combined</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🔄 Plan Switching Rules</h2>
-            <ul>
-                <li>1-month → 3-month: Allowed anytime (upgrade)</li>
-                <li>3-month → 1-month: Only allowed after plan expires</li>
-                <li>3-month → 1-month while active: NOT allowed</li>
-                <li>3-month fixed → Temporary: NOT allowed (ever)</li>
-                <li>1-month fixed → Temporary: Allowed (seat will be freed)</li>
-                <li>Temporary → Fixed: Allowed (must assign a seat)</li>
-                <li>On plan change, pricing auto-updates from library settings</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🔒 Deposit</h2>
-            <ul>
-                <li>Deposit is collected only once at the time of registration</li>
-                <li>Deposit is NOT charged on renewals — only first time</li>
-                <li>When a member pays at registration, deposit is deducted first, remaining goes to plan</li>
-                <li>Set deposit to ₹0 in Settings to disable it</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>💳 Payments & Due</h2>
-            <ul>
-                <li>Payment clears previous due first, then goes to new plan</li>
-                <li>If member pays less than full amount, remaining is shown as 'Due'</li>
-                <li>Plan auto-renews only when full plan amount is paid AND plan is expired</li>
-                <li>Active members paying partial: no renewal triggered, just reduces due</li>
-                <li>If member is active and fully paid, no payment needed until expiry</li>
-                <li>Duplicate phone/email not allowed for active members in same library</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>📝 How to Record Payment</h2>
-            <ul>
-                <li>Go to member detail → tap 'Record Payment'</li>
-                <li>If member is ACTIVE with due: amount auto-fills with due amount only</li>
-                <li>If member is EXPIRED: amount auto-fills with due + plan price (full renewal)</li>
-                <li>You can change the amount to whatever the member actually paid</li>
-                <li>Payment date: defaults to today, change if payment was received earlier</li>
-                <li>Plan Start Date: only shown when renewal will happen (defaults to expiry + 1 day)</li>
-                <li>If member is going away, set a future Plan Start Date (e.g., comes back after 10 days)</li>
-                <li>After recording, PDF receipt is auto-generated and can be shared via WhatsApp</li>
-                <li>Split calculation shows clearly: money goes to clear due first, then to new plan</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>📊 Revenue Calculation</h2>
-            <ul>
-                <li>Revenue is calculated based on actual payment received date</li>
-                <li>If payment received in June → counted in June revenue</li>
-                <li>Monthly revenue = all payments received from 1st to end of that month</li>
-                <li>Revenue includes deposits collected (it's cash received)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>📱 WhatsApp Message Rules</h2>
-            <ul>
-                <li>Send from member detail page → 'WhatsApp Message' button</li>
-                <li>Message content auto-changes based on member's expiry status:</li>
-                <li>&nbsp;&nbsp;• Expired: Urgent renewal reminder with amount due and UPI details</li>
-                <li>&nbsp;&nbsp;• Expiring within 8 days: Warning with renewal details</li>
-                <li>&nbsp;&nbsp;• Active: General greeting using your custom template</li>
-                <li>Message includes: library name, member name, expiry date, amount, UPI ID</li>
-                <li>If QR code is uploaded, option to share QR image for payment</li>
-                <li>Custom template can be set in Settings (variables: {name}, {amount}, {expiry}, {library}, {upi_id})</li>
-                <li>'Send Last Receipt' shares the latest PDF receipt link via WhatsApp</li>
-                <li>Member must have a phone number saved to send WhatsApp messages</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🔁 Renewal Rules</h2>
-            <ul>
-                <li>Plan renewal only triggers when the plan is expired AND full payment received</li>
-                <li>If plan is active, payments only clear due — no renewal triggered</li>
-                <li>Plan Start Date defaults to expiry date + 1 day</li>
-                <li>Library owner can set a custom Plan Start Date (e.g., member is away)</li>
-                <li>Plan End Date = Plan Start Date + (30 × subscription months)</li>
-                <li>Join Date never changes — Plan Start and Plan End change on every renewal</li>
-                <li>Partial payment (not enough for renewal) reactivates member but doesn't extend dates</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>💺 Seat Rules</h2>
-            <ul>
-                <li>Each seat can only be assigned to one member at a time</li>
-                <li>Fixed members must have a seat assigned at registration</li>
-                <li>If no seats available, must register as Temporary</li>
-                <li>When member is deactivated/deleted/converted to Temporary, seat is freed</li>
-                <li>Total seats can be changed in Settings</li>
-                <li>Cannot reduce seats below the number currently occupied</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>⏸️ Deactivation & Reactivation</h2>
-            <ul>
-                <li>Deactivating a member frees their seat and marks them inactive</li>
-                <li>Inactive members cannot make payments or perform actions</li>
-                <li>Reactivating restores the member to active (seat must be re-assigned manually)</li>
-                <li>Deleting a member permanently removes them and frees their seat</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>⏸️ Deactivation & Reactivation</h2>
-            <ul>
-                <li>Deactivating a member frees their seat and marks them inactive</li>
-                <li>Inactive members cannot make payments or perform actions</li>
-                <li>Reactivating restores the member to active (seat must be re-assigned manually)</li>
-                <li>Deleting a member permanently removes them and frees their seat</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>📋 Library Subscription</h2>
-            <ul>
-                <li>Library must have an active subscription to add/manage members</li>
-                <li>If library subscription expires, member operations are blocked</li>
-                <li>Library subscription is managed by the platform admin</li>
-            </ul>
-        </div>
-
-        <div class="section quick-ref">
-            <h2>⚡ Quick Reference</h2>
-            <ul>
-                <li>✅ Fixed 1-month → 3-month: Always allowed</li>
+                <li>✅ Fixed 1-month → 3-month: Always</li>
                 <li>✅ Fixed 1-month → Temporary: Allowed</li>
                 <li>✅ Temporary → Fixed: Allowed</li>
-                <li>✅ 3-month → 1-month: Only when expired</li>
-                <li>❌ 3-month → Temporary: Never allowed</li>
-                <li>❌ 3-month → 1-month while active: Not allowed</li>
-                <li>❌ Add Fixed member if no seats: Not allowed</li>
-                <li>❌ Duplicate phone/email for active members: Not allowed</li>
+                <li>✅ 3-month → 1-month: When expired</li>
+                <li>✅ One-tap WhatsApp with Pay link</li>
+                <li>✅ Custom plan start date on renewal</li>
+            </ul>
+        </div>
+
+        <div class="section blocked">
+            <h2>❌ Not Allowed</h2>
+            <ul>
+                <li>❌ 3-month → Temporary: Never</li>
+                <li>❌ 3-month → 1-month while active</li>
+                <li>❌ Add Fixed member if no seats free</li>
+                <li>❌ Duplicate phone/email for active members</li>
+                <li>❌ Renewal while plan is still active</li>
             </ul>
         </div>
 
