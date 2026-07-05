@@ -13,6 +13,12 @@
         .container { max-width: 700px; margin: 0 auto; }
         h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; color: #1f2937; }
         .subtitle { color: #6b7280; margin-bottom: 2rem; font-size: 0.95rem; }
+        .lang-toggle { display: flex; background: #fff; border-radius: 12px; padding: 4px; border: 1px solid #e5e7eb; margin-bottom: 1.5rem; max-width: 250px; }
+        .lang-btn { flex: 1; padding: 10px 16px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 0.9rem; cursor: pointer; border: none; background: none; color: #6b7280; }
+        .lang-btn.active { background: #4f46e5; color: #fff; }
+        .content-mr { display: none; }
+        body.marathi .content-en { display: none; }
+        body.marathi .content-mr { display: block; }
         .section { border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; border: 1px solid; }
         .section h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; }
         .section ul { list-style: none; }
@@ -47,6 +53,15 @@
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← Back to Home</a>
+
+        <!-- Language Toggle -->
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+            <button class="lang-btn" id="btn-mr" onclick="setLang('mr')">मराठी</button>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="content-en">
         <h1>👋 How Lably Works</h1>
         <p class="subtitle">Step-by-step guide — from setup to daily management. Super simple!</p>
 
@@ -225,10 +240,132 @@
             </ul>
         </div>
 
+        </div><!-- end content-en -->
+
+        <!-- MARATHI -->
+        <div class="content-mr">
+        <h1>👋 Lably मध्ये स्वागत!</h1>
+        <p class="subtitle">हे अ‍ॅप म्हणजे तुमची डिजिटल रजिस्टर. स्टेप बाय स्टेप सगळं समजून घ्या — अगदी सोपं!</p>
+
+        <div class="section blue"><h2>⚙️ स्टेप 1: तुमची लायब्ररी सेट करा</h2><ul>
+            <li>Settings उघडा आणि तुमची माहिती भरा</li>
+            <li>📍 लायब्ररीचे नाव व शहर → सर्व बिलांवर दिसेल</li>
+            <li>📞 तुमचा फोन नंबर → सदस्य तुम्हाला कॉल करू शकतील</li>
+            <li>💰 किंमत → दर महिन्याला किती चार्ज करता</li>
+            <li>🔒 डिपॉझिट → नवीन सदस्यांसाठी एक वेळचे शुल्क</li>
+            <li>📱 UPI ID व QR → सदस्य ऑनलाइन पैसे देऊ शकतील</li>
+            <li>💺 एकूण सीट्स → तुमच्या लायब्ररीत किती सीट्स आहेत</li>
+        </ul><div class="tip">💡 हा फक्त एकदाच करायचा फॉर्म आहे!</div></div>
+
+        <div class="section purple"><h2>👥 स्टेप 2: सदस्यांचे दोन प्रकार</h2><ul>
+            <li>🪑 फिक्स्ड = त्यांची स्वतःची सीट. कोणी बसू शकत नाही.</li>
+            <li>⏱️ तात्पुरते = कोणतीही ठराविक सीट नाही</li>
+            <li>फिक्स्ड सदस्य 1 महिना किंवा 3 महिन्यांचा प्लॅन घेऊ शकतात</li>
+            <li>तात्पुरत्या सदस्यांना फक्त 1 महिन्याचा प्लॅन मिळतो</li>
+        </ul><div class="tip">💡 सर्व सीट्स भरल्या? फक्त तात्पुरते सदस्य जोडा!</div></div>
+
+        <div class="section green"><h2>➕ स्टेप 3: नवीन सदस्य जोडणे</h2><ul>
+            <li>+ बटण दाबा → नाव, फोन भरा → फिक्स्ड किंवा तात्पुरते निवडा</li>
+            <li>फिक्स्ड साठी: उपलब्ध सीट्समधून एक निवडा</li>
+            <li>अ‍ॅप दाखवतो: प्लॅन किंमत + डिपॉझिट = एकूण रक्कम</li>
+            <li>सदस्याने किती दिले ते एंटर करा</li>
+            <li>कमी दिले? काही हरकत नाही — बाकी ट्रॅक होते</li>
+            <li>बिल आपोआप तयार होते. WhatsApp वर शेअर करा!</li>
+        </ul><div class="tip">💡 सगळा हिशोब अ‍ॅप करतो. फक्त मिळालेली रक्कम एंटर करा!</div></div>
+
+        <div class="section amber"><h2>🔒 स्टेप 4: डिपॉझिट — फक्त एकदाच</h2><ul>
+            <li>डिपॉझिट = जॉइन करताना एकदाच घेतलेली सिक्युरिटी</li>
+            <li>दर महिन्याला पुन्हा चार्ज होत नाही</li>
+            <li>₹600 दिले, डिपॉझिट ₹100 → ₹100 डिपॉझिट + ₹500 प्लॅन</li>
+            <li>₹400 दिले → ₹100 डिपॉझिट + ₹300 प्लॅन (₹200 बाकी)</li>
+        </ul><div class="tip">💡 डिपॉझिट नको? Settings मध्ये ₹0 ठेवा.</div></div>
+
+        <div class="section indigo"><h2>💺 स्टेप 5: सीट — साधे नियम</h2><ul>
+            <li>1 सीट = 1 सदस्य. कोणी शेअर करत नाही</li>
+            <li>फिक्स्ड सदस्याला सीट लागतेच. तात्पुरत्याला नाही</li>
+            <li>कोणी सोडून गेलं → सीट आपोआप फ्री होते</li>
+            <li>कोणाचीही सीट कधीही बदलता येते</li>
+        </ul><div class="tip">💡 आणखी सीट्स हव्या? Settings मध्ये नंबर वाढवा!</div></div>
+
+        <div class="section green"><h2>💳 स्टेप 6: दर महिन्याचे पेमेंट</h2><ul>
+            <li>सदस्याचे प्रोफाइल → 'Record Payment' दाबा</li>
+            <li>अ‍ॅप आपोआप रक्कम भरतो</li>
+            <li>जुनी बाकी असेल → ती आधी क्लिअर होते</li>
+            <li>उरलेले पैसे नवीन प्लॅनला जातात</li>
+            <li>उदा: बाकी ₹200, प्लॅन ₹500. ₹700 दिले → ₹200 बाकी ✓ + ₹500 नवीन प्लॅन ✓</li>
+        </ul><div class="tip">💡 पेमेंट रेकॉर्ड केल्यावर बिल आपोआप तयार होते!</div></div>
+
+        <div class="section orange"><h2>🔁 स्टेप 7: प्लॅन संपल्यावर</h2><ul>
+            <li>प्लॅन संपला = महिना/3 महिने पूर्ण</li>
+            <li>संपलेल्या सदस्याचे पेमेंट → प्लॅन RENEW</li>
+            <li>नवीन प्लॅन: एक्सपायरी + 1 दिवस</li>
+            <li>सदस्य बाहेर जात आहे? कस्टम स्टार्ट डेट सेट करा!</li>
+            <li>पार्शियल पेमेंट → अ‍ॅक्टिव्ह होतात पण तारखा बदलत नाहीत</li>
+        </ul><div class="tip">💡 RENEW फक्त पूर्ण रक्कम भरल्यावरच होतो!</div></div>
+
+        <div class="section green"><h2>📱 स्टेप 8: WhatsApp रिमाइंडर</h2><ul>
+            <li>सदस्याचे प्रोफाइल → 'WhatsApp Message' दाबा</li>
+            <li>अ‍ॅप स्वतः मेसेज लिहितो:</li>
+            <li>&nbsp;&nbsp;😱 प्लॅन संपला → 'कृपया रिन्यू करा + पेमेंट लिंक'</li>
+            <li>&nbsp;&nbsp;⏰ लवकर संपणार → 'प्लॅन 3 दिवसात संपतो...'</li>
+            <li>&nbsp;&nbsp;💳 बाकी → 'पेमेंट बाकी, कृपया भरा...'</li>
+            <li>मेसेजमध्ये: UPI ID + QR Code + Click to Pay लिंक</li>
+            <li>सदस्य लिंक दाबतो → UPI अ‍ॅप रक्कम तयार!</li>
+        </ul><div class="tip">💡 तुम्हाला काही टाइप करायला नको. फक्त बटण दाबा!</div></div>
+
+        <div class="section purple"><h2>📄 स्टेप 9: बिल / पावती</h2><ul>
+            <li>प्रत्येक पेमेंट → PDF बिल आपोआप तयार</li>
+            <li>बिलावर: नाव, शहर, फोन, प्लॅन तपशील</li>
+            <li>नोंदणी: डिपॉझिट दिसतो. रिन्यूअल: फक्त प्लॅन</li>
+            <li>मराठी/हिंदी मध्ये काम करते!</li>
+        </ul></div>
+
+        <div class="section blue"><h2>📊 स्टेप 10: तुमचा महसूल</h2><ul>
+            <li>Dashboard — किती पैसे आले ते दिसते</li>
+            <li>या महिन्याचे, मागचे, वार्षिक — सगळे</li>
+            <li>महसूल = एकूण मिळालेले पैसे (डिपॉझिटसह)</li>
+        </ul><div class="tip">💡 दररोज Dashboard तपासा!</div></div>
+
+        <div class="section gray"><h2>🔄 प्लॅन बदलणे</h2><ul>
+            <li>1 महिना → 3 महिने: कधीही ✅</li>
+            <li>3 महिने → 1 महिना: प्लॅन संपल्यावरच ✅</li>
+            <li>फिक्स्ड → तात्पुरते: 1 महिन्याच्या सदस्यांसाठी ✅</li>
+            <li>तात्पुरते → फिक्स्ड: कधीही ✅</li>
+            <li>3 महिने → तात्पुरते: कधीही नाही ❌</li>
+        </ul></div>
+
+        <div class="section allowed"><h2>✅ झटपट संदर्भ</h2><ul>
+            <li>✅ एका टॅपने सदस्य जोडा, पेमेंट रेकॉर्ड करा</li>
+            <li>✅ बिल आपोआप — WhatsApp वर शेअर</li>
+            <li>✅ जुनी बाकी आधी, मग नवीन प्लॅन</li>
+            <li>✅ प्लॅन संपला + पूर्ण पेमेंट = रिन्यूअल</li>
+            <li>✅ UPI लिंकने सदस्य एका टॅपने पैसे देतात</li>
+        </ul></div>
+
+        <div class="section blocked"><h2>❌ हे करता येत नाही</h2><ul>
+            <li>❌ 3 महिन्यांचा सदस्य अ‍ॅक्टिव्ह असताना 1 महिन्यावर जाऊ शकत नाही</li>
+            <li>❌ 3 महिन्यांचा सदस्य तात्पुरता होऊ शकत नाही</li>
+            <li>❌ सीट नसेल तर फिक्स्ड सदस्य जोडता येत नाही</li>
+            <li>❌ एकाच फोन नंबरने दोनदा सदस्य जोडता येत नाही</li>
+        </ul></div>
+        </div><!-- end content-mr -->
+
         <div class="footer">
             <p><a href="index.html">← Back to Lably</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></p>
             <p style="margin-top:0.5rem;">© 2025 Lably by Zutly</p>
         </div>
     </div>
+
+    <script>
+    function setLang(lang) {
+        if (lang === 'mr') {
+            document.body.classList.add('marathi');
+        } else {
+            document.body.classList.remove('marathi');
+        }
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-mr').classList.toggle('active', lang === 'mr');
+    }
+    </script>
 </body>
 </html>
